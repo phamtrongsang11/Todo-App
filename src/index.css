@@ -1,0 +1,13 @@
+.divide {
+	border-width: 2px;
+}
+
+.scroll-list {
+	border: 0.5px solid #ced4da;
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.color-medium {
+	color: #6e6969;
+}
