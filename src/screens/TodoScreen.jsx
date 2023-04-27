@@ -3,6 +3,7 @@ import Title from '../components/Title';
 import useApi from '../hooks/useApi';
 import todoService from '../services/todo-service';
 import ListGroup from '../components/ListGroup';
+import LoadingBox from '../components/LoadingBox';
 
 const TodoScreen = () => {
 	const getUsersApi = useApi(todoService.getUsers);
@@ -30,22 +31,25 @@ const TodoScreen = () => {
 				<Title>
 					<h5>Users</h5>
 				</Title>
-				<select
-					name="users"
-					className="form-select w-auto mt-3"
-					onChange={(event) => {
-						getTodosApi.request(event.target.value);
-					}}
-				>
-					<option value="" disabled selected hidden>
-						Select user
-					</option>
-					{getUsersApi?.data.map((user) => (
-						<option key={user.id} value={user.id}>
-							{user.name}
+				<div className="d-flex align-items-center mt-3">
+					<select
+						name="users"
+						className="form-select w-auto"
+						onChange={(event) => {
+							getTodosApi.request(event.target.value);
+						}}
+					>
+						<option value="" disabled selected hidden>
+							Select user
 						</option>
-					))}
-				</select>
+						{getUsersApi?.data.map((user) => (
+							<option key={user.id} value={user.id}>
+								{user.name}
+							</option>
+						))}
+					</select>
+					{getUsersApi.loading && <LoadingBox />}
+				</div>
 			</div>
 			<div>
 				<Title>
