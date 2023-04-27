@@ -6,7 +6,7 @@ Todo app has a several feature like:
 - Sort list of task by completed property
 - Display number task had done
 
-<img src="https://user-images.githubusercontent.com/101312630/234788051-c439efac-8ee5-4ce0-8b59-2b2a8d72957d.png" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/101312630/234788051-c439efac-8ee5-4ce0-8b59-2b2a8d72957d.png" width="80%" height="80%">
 
 ## Getting Start
 To run the app, simply run:
